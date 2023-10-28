@@ -1,42 +1,41 @@
 package com.example.demo.entity;
 
-import java.util.ArrayList;
+import jakarta.persistence.*;
 
+
+@Entity
 public class MaterialEducativo {
-    private ArrayList <Concursante> concursantes; //un material es de uno o varios concursantes.
-    private ArrayList <Like> likes; //cantidad de likes. 
-    private Evaluador evaluador;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idMaterial;
+
+    private String nombre;
+    private String descripcion;
+
 
     public MaterialEducativo() {
-        likes = new ArrayList <Like> (null);
     }
 
 
-    public ArrayList<Concursante> getConcursantes() {
-        return this.concursantes;
+    public Long getId() {
+        return this.idMaterial;
     }
 
-    public void setConcursantes(ArrayList<Concursante> concursantes) {
-        this.concursantes = concursantes;
+    public String getNombre() {
+        return this.nombre;
     }
 
-    public ArrayList <Like> getLikes() {
-        return this.likes;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public Evaluador getEvaluador() {
-        return this.evaluador;
+    public String getDescripcion() {
+        return this.descripcion;
     }
 
-    public void setEvaluador(Evaluador evaluador) {
-        this.evaluador = evaluador;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public int cantidadLikes (){
-        return likes.size();
-    }
-
-    public void agregarConcursante (Concursante concursante){
-        concursantes.add (concursante);        
-    }
 }

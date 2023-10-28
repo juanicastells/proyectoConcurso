@@ -1,33 +1,22 @@
 package com.example.demo.entity;
 
-
 import jakarta.persistence.*;
-import jakarta.persistence.MappedSuperclass;
 
-
-/*con @MappedSuperclass, lo que se indica es que esta clase no se mapeará directamente a 
-una tabla, pero sus atributos serán heredados por las clases hijas que se mapearán a tablas.*/
-
-@MappedSuperclass
+@Entity
+@Table(name = "usuario")
 public class Usuario{
     @Id
-    private long id;
-    private String apellidoNombre;
+    @Column(columnDefinition = "VARCHAR(255)")
     private String mail;
+    @Column(columnDefinition = "VARCHAR(255)")
+    private String apellidoNombre;
+    @Column(columnDefinition = "VARCHAR(255)")
     private String pass;
-    
+    @Enumerated(EnumType.STRING)
+    private Rol rol;
 
     public Usuario() {
     }
-    
-
-    public long getId() {
-        return this.id;
-    }
-
-    /*public void setId(long id) {
-        this.id = id;
-    }*/
 
     public String getApellidoNombre() {
         return this.apellidoNombre;
@@ -51,6 +40,14 @@ public class Usuario{
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    public Rol getRol() {
+        return this.rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
     }
 
 }
