@@ -12,12 +12,14 @@ public class MaterialEducativo {
 
     private String nombre;
     private String descripcion;
-
-
+    private Long cantidadLike; //No hay limites de like que un usuario pueda dar. 
+                                //El usuario puede dar like a distintos materiales.
+    
     public MaterialEducativo() {
+        
     }
-
-
+    
+    
     public Long getId() {
         return this.idMaterial;
     }
@@ -36,6 +38,22 @@ public class MaterialEducativo {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public Long getIdMaterial() {
+        return this.idMaterial;
+    }
+
+    public void setIdMaterial(Long idMaterial) {
+        this.idMaterial = idMaterial;
+    }
+
+    public Long getCantidadLike() {
+        return this.cantidadLike;
+    }
+
+    public void setCantidadLike(Long cantidadLike) {
+        this.cantidadLike = cantidadLike;
     }
 
 }

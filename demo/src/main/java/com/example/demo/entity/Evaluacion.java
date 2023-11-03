@@ -7,13 +7,18 @@ public class Evaluacion {
     
     @Id
     private Long idEvaluacion;
+
+    //Cada material puede tener varios evaluadores pero,
+    //cada evaluador hace su propia evaluación. 
     @OneToOne
-    @JoinColumn(name = "mail") // Clave en Usuario
+    @JoinColumn(name = "mailIdEvaluador", referencedColumnName = "mail") // Clave en Usuario
     private Usuario evaluador;
+    
     @OneToOne
     @JoinColumn (name = "idMaterial")
-    private Evaluacion evaluacion;
+    private MaterialEducativo material;
     //faltaria la rúbrica. 
+
 
     public Evaluacion() {
     }
@@ -29,5 +34,17 @@ public class Evaluacion {
     public void setEvaluador(Usuario evaluador) {
         this.evaluador = evaluador;
     }
+    public void setIdEvaluacion(Long idEvaluacion) {
+        this.idEvaluacion = idEvaluacion;
+    }
+
+    public MaterialEducativo getMaterial() {
+        return this.material;
+    }
+
+    public void setMaterial(MaterialEducativo material) {
+        this.material = material;
+    }
+
 
 }
