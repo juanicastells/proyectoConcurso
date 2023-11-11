@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.entity.Usuario;
 
 @Repository
-public interface UsuarioRepositoryLong extends JpaRepository <Usuario, Long> {
+public interface UsuarioRepository extends JpaRepository <Usuario, String> {
 
+    //se elimina por mail que es clave primaria de Usuario.
+    void deleteById(String usuarioId);
+        
 }

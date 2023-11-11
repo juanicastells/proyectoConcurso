@@ -12,8 +12,7 @@ public class MaterialEducativo {
 
     private String nombre;
     private String descripcion;
-    private Long cantidadLike; //No hay limites de like que un usuario pueda dar. 
-                                //El usuario puede dar like a distintos materiales.
+    private Long cantidadLike;
     
     public MaterialEducativo() {
         

@@ -12,6 +12,8 @@ public class Usuario{
     private String apellidoNombre;
     @Column(columnDefinition = "VARCHAR(255)")
     private String pass;
+    @Column(columnDefinition = "VARCHAR(255)")
+    private String telefono;
     @Enumerated(EnumType.STRING)
     private Rol rol;
 
@@ -40,6 +42,14 @@ public class Usuario{
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    public String getTelefono() {
+        return this.telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public Rol getRol() {
