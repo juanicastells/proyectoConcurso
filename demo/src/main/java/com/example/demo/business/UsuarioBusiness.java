@@ -1,5 +1,7 @@
 package com.example.demo.business;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +34,18 @@ public class UsuarioBusiness{
         }
     }
 
+     public Usuario actualizarDatosUsuario(String usuarioId, String nuevoNombre, String nuevoTelefono, Rol nuevoRol) {
+        Usuario usuario = usuarioRepository.findById(usuarioId).orElse(null);
+        if (usuario != null) {
+            usuario.setApellidoNombre(nuevoNombre);
+            usuario.setTelefono(nuevoTelefono);
+            usuario.setRol(nuevoRol);
+            return usuarioRepository.save(usuario);
+        } else {
+            return null;
+        }
+    }
+
     public Usuario asignarRol (String usuarioId, Rol rol) {
         Usuario usuario = usuarioRepository.findById(usuarioId).orElse(null);
         if (usuario != null) {
@@ -40,6 +54,15 @@ public class UsuarioBusiness{
         } else {
             return null;
         }
+    }
+
+    public void bajaUsuario (String mail){
+        usuarioRepository.deleteById(mail);
+    }
+
+    public Usuario obtenerPorMail(String mail) {//optional es un contendor que puede o no contener un valor null.
+        Optional <Usuario> usuarioOptional = usuarioRepository.findById(mail);
+        return usuarioOptional.get();
     }
 
     //CONCURSANTE
