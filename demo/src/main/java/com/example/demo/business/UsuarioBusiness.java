@@ -62,6 +62,9 @@ public class UsuarioBusiness{
 
     public Usuario obtenerPorMail(String mail) {//optional es un contendor que puede o no contener un valor null.
         Optional <Usuario> usuarioOptional = usuarioRepository.findById(mail);
+        if (usuarioOptional.isEmpty()){
+            return null;
+        }
         return usuarioOptional.get();
     }
 
@@ -73,5 +76,5 @@ public class UsuarioBusiness{
     
     //EVALUADOR
     //completarRubrica
-        
+       
 }

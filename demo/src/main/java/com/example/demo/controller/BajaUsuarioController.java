@@ -27,20 +27,16 @@ public class BajaUsuarioController {
     }
 
     @PostMapping ("/bajaUsuario")
-    public String eliminar(){
-        return "usuarioEliminado";
-    }
-    /*public String eliminar(@RequestParam("mail") String mail, Model model){
+    public String eliminar(@RequestParam("mail") String mail, Model model){
         Usuario usuario = usuarioBusiness.obtenerPorMail(mail);
 
         if (usuario != null) {
-            //model.addAttribute("usuario", usuario);
+            usuarioBusiness.bajaUsuario(mail);
             return "usuarioEliminado";
         } else {
             // Puedes agregar un mensaje de error si el usuario no se encuentra
-            model.addAttribute("error", "Usuario no encontrado");
+            //model.addAttribute("error", "Usuario no encontrado");
             return "usuarioEliminado";
         }
-
-    }*/
+    }
 }

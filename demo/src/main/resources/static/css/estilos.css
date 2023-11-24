@@ -6,8 +6,6 @@ body {
   font-family: "Poppins", helvetica;
   font-size: 15px;
   font-weight: 300;
-  margin: 0 auto;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -46,19 +44,16 @@ form {
 
 input {
   margin-bottom: 10px;
+  font-size: 18px;
 }
 
 label {
   font-size: 24px;
 }
 
-input {
-  font-size: 18px;
-}
-
 button{
   font-size: 24px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 nav{
@@ -66,5 +61,24 @@ nav{
 }
 
 nav{
-  font-size: 24px;
+  font-size: 20px;
+}
+
+a{
+  text-decoration: none; 
+  color: #0077cc; 
+  font-size: 20px; 
+}
+
+a:hover {
+  color: #004466; 
+}
+
+.notificacion{
+  text-align: center;
+}
+
+footer{
+  padding: 20px;
+  background-color: #0077cce7;
 }

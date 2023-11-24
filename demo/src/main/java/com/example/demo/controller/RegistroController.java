@@ -13,15 +13,21 @@ public class RegistroController {
     @Autowired
     private UsuarioBusiness usuarioBusiness;
     
+   
     @GetMapping("/registro")
-    public String registar(){
+    public String registro() {
         return "registro";
     }
 
-    @PostMapping ("/registro")
-    public String altaUsuario(Usuario usuario){
+    @GetMapping("/usuarioRegistrado")
+    public String usuarioRegistrado() {
+        return "usuarioRegistrado";
+    }
+
+    @PostMapping("/registro")
+    public String altaUsuario(Usuario usuario) {
         usuarioBusiness.insertUsuario(usuario);
-        return "inicioAdmin";
+        return "usuarioRegistrado";  
     }
 }
 
