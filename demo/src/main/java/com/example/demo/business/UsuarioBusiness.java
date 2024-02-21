@@ -1,5 +1,6 @@
 package com.example.demo.business;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ public class UsuarioBusiness{
         return usuarioRepository.save(usuario);
     }
 
+    //elimina por mail
     public void deleteUsuario(String usuarioId) {
         usuarioRepository.deleteById(usuarioId);
     }
@@ -66,6 +68,10 @@ public class UsuarioBusiness{
             return null;
         }
         return usuarioOptional.get();
+    }
+   
+    public List<Usuario> obtenerTodosLosUsuarios() {
+        return usuarioRepository.findAll();
     }
 
     //CONCURSANTE

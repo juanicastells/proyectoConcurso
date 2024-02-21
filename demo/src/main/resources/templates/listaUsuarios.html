@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>lista usuarios</title>
+</head>
+<body>
+    <header>
+        <a href="inicioAdmin"><img src="img/LOGOS-05.png"/></a>
+        <h1>Lista de Usuarios<h1>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>Mail</th>
+                <th>Apellido y Nombres</th>
+                <th>Teléfono</th>
+                <th>Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Utilizamos Thymeleaf para iterar sobre la lista de usuarios -->
+            <tr th:each="usuario : ${usuarios}">
+                <!-- Utilizamos th:text para mostrar los valores de cada propiedad del usuario -->
+                <td th:text="${usuario.mail}"></td>
+                <td th:text="${usuario.apellidoNombre}"></td>
+                <td th:text="${usuario.telefono}"></td>
+                <td th:text="${usuario.rol}"></td>
+                <td>
+                    <form th:action="@{'/listaUsuarios/' + ${usuario.mail}}" method="post">
+                        <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">Eliminar</button>
+                    </form>
+                    
+                    
+                    <button type="button">Modificar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
