@@ -11,33 +11,37 @@
         <a href="inicioAdmin"><img src="img/LOGOS-05.png"/></a>
         <h1>Lista de Usuarios<h1>
     </header>
-    <table>
-        <thead>
-            <tr>
-                <th>Mail</th>
-                <th>Apellido y Nombres</th>
-                <th>Teléfono</th>
-                <th>Rol</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Utilizamos Thymeleaf para iterar sobre la lista de usuarios -->
-            <tr th:each="usuario : ${usuarios}">
-                <!-- Utilizamos th:text para mostrar los valores de cada propiedad del usuario -->
-                <td th:text="${usuario.mail}"></td>
-                <td th:text="${usuario.apellidoNombre}"></td>
-                <td th:text="${usuario.telefono}"></td>
-                <td th:text="${usuario.rol}"></td>
-                <td>
-                    <form th:action="@{'/listaUsuarios/' + ${usuario.mail}}" method="post">
-                        <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">Eliminar</button>
-                    </form>
-                    
-                    
-                    <button type="button">Modificar</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="contenedorTabla">
+        <table>
+            <thead>
+                <tr>
+                    <th>Mail</th>
+                    <th>Apellido y Nombres</th>
+                    <th>Teléfono</th>
+                    <th>Rol</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Utilizamos Thymeleaf para iterar sobre la lista de usuarios -->
+                <tr th:each="usuario : ${usuarios}">
+                    <!-- Utilizamos th:text para mostrar los valores de cada propiedad del usuario -->
+                    <td th:text="${usuario.mail}"></td>
+                    <td th:text="${usuario.apellidoNombre}"></td>
+                    <td th:text="${usuario.telefono}"></td>
+                    <td th:text="${usuario.rol}"></td>
+                    <td>
+                        <form th:action="@{'/listaUsuarios/' + ${usuario.mail}}" method="post">
+                            <div class="botonesTabla">
+                                <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">Eliminar</button>
+                                <button type="submit" formaction="formularioModificarUsuario">Modificar</button>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="inicioAdmin">Volver</a>
+    </div>
+    
 </body>
 </html>
