@@ -22,9 +22,7 @@
         <input type="text" id="rol" name="rol" th:field="*{rol}" required/>
         
         <button type="submit" class="btn btn-primary">Actualizar</button>
-        <a th:href="@{/buscarUsuario}">Volver al Formulario de Búsqueda</a>
-    </form>>    
-    
-   
+        <a href="/inicioAdmin">Volver</a> <!--no se vuelve a listaUsuarios porque la vista requiere paràmetros-->
+    </form>
 </body>
 </html>

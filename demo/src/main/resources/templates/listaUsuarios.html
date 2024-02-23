@@ -30,10 +30,14 @@
                     <td th:text="${usuario.telefono}"></td>
                     <td th:text="${usuario.rol}"></td>
                     <td>
-                        <form th:action="@{'/listaUsuarios/' + ${usuario.mail}}" method="post">
+                        <form th:action="@{'/eliminarUsuario/' + ${usuario.mail}}" method="post">
                             <div class="botonesTabla">
                                 <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">Eliminar</button>
-                                <button type="submit" formaction="formularioModificarUsuario">Modificar</button>
+                            </div>
+                        </form>
+                        <form th:action="@{'/buscarUsuario/' + ${usuario.mail}}" method="post">
+                            <div class="botonesTabla">
+                                <button type="submit">Modificar</button>
                             </div>
                         </form>
                     </td>

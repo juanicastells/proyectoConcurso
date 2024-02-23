@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.business.UsuarioBusiness;
 import com.example.demo.entity.Usuario;
@@ -19,11 +20,6 @@ public class UsuarioController {
     @Autowired
     UsuarioBusiness usuarioBusiness;
 
-    @GetMapping("/usuarioEncontrado")
-    public String usuarioEncontrado() {
-        return "usuarioEncontrado";
-    }
-
     @GetMapping("/listaUsuarios")
     public String mostrarListaDeUsuarios(Model model) {
         List<Usuario> usuarios = usuarioBusiness.obtenerTodosLosUsuarios();
@@ -31,10 +27,29 @@ public class UsuarioController {
         return "listaUsuarios";
     }
 
-    @PostMapping("/listaUsuarios/{mail}")
+    @PostMapping("/eliminarUsuario/{mail}")
     public String eliminarUsuario(@PathVariable String mail){
         usuarioBusiness.deleteUsuario(mail);
         return "usuarioEliminado";
+    }
+
+    @PostMapping("/formularioModificarUsuario")
+    public String formularioModificarUsuario() {
+        return "formularioModificarUsuario";
+    }
+    
+    @PostMapping ("/buscarUsuario/{mail}")
+    public String buscarUsario (@PathVariable String mail, Model model){
+        Usuario usuario = usuarioBusiness.obtenerPorMail(mail);
+
+        if (usuario != null) {
+            model.addAttribute("usuario", usuario);
+            return "formularioModificarUsuario";
+        } else {
+            // Puedes agregar un mensaje de error si el usuario no se encuentra
+            model.addAttribute("error", "Usuario no encontrado");
+            return "modificacion";
+        }
     }
 
 }
