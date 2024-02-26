@@ -1,7 +1,7 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
-
+import java.io.File;
 
 @Entity
 public class MaterialEducativo {
@@ -9,15 +9,14 @@ public class MaterialEducativo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMaterial;
-
     private String nombre;
     private String descripcion;
     private Long cantidadLike;
-    
+    private File archivoMaterial;
+
     public MaterialEducativo() {
         
     }
-    
     
     public Long getId() {
         return this.idMaterial;
@@ -53,6 +52,15 @@ public class MaterialEducativo {
 
     public void setCantidadLike(Long cantidadLike) {
         this.cantidadLike = cantidadLike;
+    }
+
+
+    public File getArchivoMaterial() {
+        return this.archivoMaterial;
+    }
+
+    public void setArchivoMaterial(File archivoMaterial) {
+        this.archivoMaterial = archivoMaterial;
     }
 
 }

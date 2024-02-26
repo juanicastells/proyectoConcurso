@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>loginConcursante</title>
+</head>
+    <body>
+        <header>
+            <img src="img/LOGOS-05.png"/>
+            <nav>
+                <a href="home">Home</a>
+                <a href="https://wite.unnoba.edu.ar/">WITE</a>
+                <a href="https://unnoba.edu.ar/">UNNOBA</a>
+            </nav>
+        </header>
+        <form th:action="@{/inicioConcursante}">
+            <h2>Login</h2>
+            <label for="username">Usuario:</label>
+            <input type="mail" placeholder="@comunidad.unnoba.eud.ar" required>
+    
+            <label for="password">Contraseña:</label>
+            <input type="password" required>
+    
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <p>Ingresá, subí tu <b>Material Educativo</b> <br> Comenzá a Concursar !</p>
+    </body>
+</html>
