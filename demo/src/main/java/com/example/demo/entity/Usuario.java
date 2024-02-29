@@ -16,6 +16,10 @@ public class Usuario{
     private String telefono;
     @Enumerated(EnumType.STRING)
     private Rol rol;
+    
+    @OneToOne(cascade = CascadeType.ALL) // Puedes ajustar el CascadeType según tus necesidades
+    @JoinColumn(name = "material_educativo_id")
+    private MaterialEducativo materialEducativo;
 
     public Usuario() {
     }
@@ -59,5 +63,15 @@ public class Usuario{
     public void setRol(Rol rol) {
         this.rol = rol;
     }
+
+
+    public MaterialEducativo getMaterialEducativo() {
+        return this.materialEducativo;
+    }
+
+    public void setMaterialEducativo(MaterialEducativo materialEducativo) {
+        this.materialEducativo = materialEducativo;
+    }
+
 
 }

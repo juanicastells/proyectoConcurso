@@ -13,6 +13,6 @@ public class inicioConcursanteController {
     @GetMapping("/panelSubirMaterial")
         public String panelSubirMaterial(){
             return "panelSubirMaterial";
-        }
+    }
     
 }

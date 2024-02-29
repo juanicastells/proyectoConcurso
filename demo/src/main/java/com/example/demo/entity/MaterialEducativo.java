@@ -7,15 +7,12 @@ import java.io.File;
 public class MaterialEducativo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idMaterial;
     private String nombre;
     private String descripcion;
     private Long cantidadLike;
     private File archivoMaterial;
-    //@ManyToOne
-    //@JoinColumn(name = "mail")
-    //private Usuario autor;
    
     public MaterialEducativo() {
     }
@@ -63,13 +60,5 @@ public class MaterialEducativo {
     public void setArchivoMaterial(File archivoMaterial) {
         this.archivoMaterial = archivoMaterial;
     }
-
-    /*public Usuario getAutores() {
-        return autor;
-    }
-
-    public void setAutor(Usuario autor) {
-        this.autor = autor;
-    }*/
 
 }
