@@ -13,9 +13,11 @@ public class MaterialEducativo {
     private String descripcion;
     private Long cantidadLike;
     private File archivoMaterial;
-
+    //@ManyToOne
+    //@JoinColumn(name = "mail")
+    //private Usuario autor;
+   
     public MaterialEducativo() {
-        
     }
     
     public Long getId() {
@@ -54,7 +56,6 @@ public class MaterialEducativo {
         this.cantidadLike = cantidadLike;
     }
 
-
     public File getArchivoMaterial() {
         return this.archivoMaterial;
     }
@@ -62,5 +63,13 @@ public class MaterialEducativo {
     public void setArchivoMaterial(File archivoMaterial) {
         this.archivoMaterial = archivoMaterial;
     }
+
+    /*public Usuario getAutores() {
+        return autor;
+    }
+
+    public void setAutor(Usuario autor) {
+        this.autor = autor;
+    }*/
 
 }

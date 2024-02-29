@@ -97,7 +97,7 @@ a{
 }
 
 a:hover {
-  color: #004466; 
+  font-weight: 700;
 }
 
 .notificacion{

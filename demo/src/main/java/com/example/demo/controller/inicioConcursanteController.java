@@ -9,4 +9,10 @@ public class inicioConcursanteController {
     public String inicioConcursante(){
         return "inicioConcursante";
     }
+
+    @GetMapping("/panelSubirMaterial")
+        public String panelSubirMaterial(){
+            return "panelSubirMaterial";
+        }
+    
 }

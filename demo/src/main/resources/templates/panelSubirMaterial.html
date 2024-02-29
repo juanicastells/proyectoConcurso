@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>subir material</title>
+</head>
+<body>
+    <header>
+        <img src="img/LOGOS-05.png"/>
+        <h1>CeD - Upload</h1>
+    </header>
+    <h2>Subir Material</h2>
+    <form action="/subirMaterial" method="post" enctype="multipart/form-data">
+        <label for="documento">Seleccioná un documento:</label>
+        <input type="file" name="documento" id="documento" accept=".pdf, .doc, .docx">
+        <button type="submit">Subir documento</button>
+        <a href="inicioConcursante">Volver</a>
+    </form>
+    
+</body>
+</html>
