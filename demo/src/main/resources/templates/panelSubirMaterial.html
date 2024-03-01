@@ -13,6 +13,14 @@
     </header>
     <h2>Subir Material</h2>
     <form action="/subirMaterial" method="post" enctype="multipart/form-data">
+
+        <label>Nombre del Material</label>
+        <input type="text" name ="nombreMaterial" class="form-control" required>
+    
+        <label>Descripción</label>
+        <textarea name="descripcion" rows="10" cols="50" placeholder="Contanos de qué se trata tu Material. Recordá que tu descripción será publicada junto con tu Material Educativo" required></textarea>
+        <!-- <p id="sugerenciaComentario">Contanos de qué se trata tu Material. Recordá que tu descripción será publicada junto con tu Material Educativo</p> -->
+
         <label for="documento">Seleccioná un documento:</label>
         <input type="file" name="documento" id="documento" accept=".pdf, .doc, .docx">
         <button type="submit">Subir documento</button>

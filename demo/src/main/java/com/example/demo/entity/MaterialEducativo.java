@@ -7,7 +7,7 @@ import java.io.File;
 public class MaterialEducativo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMaterial;
     private String nombre;
     private String descripcion;
