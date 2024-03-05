@@ -9,5 +9,7 @@ public interface UsuarioRepository extends JpaRepository <Usuario, String> {
 
     //se elimina por mail que es clave primaria de Usuario.
     void deleteById(String usuarioId);
+
+    Usuario findBymail (String mail);
         
 }
