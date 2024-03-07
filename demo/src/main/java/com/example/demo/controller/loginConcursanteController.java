@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class loginConcursanteController {
 
-    @GetMapping("/loginConcursante")
+    /*@GetMapping("/loginConcursante")
     public String loginConcursante() {
         return "loginConcursante";
-    }
+    }*/
 }
