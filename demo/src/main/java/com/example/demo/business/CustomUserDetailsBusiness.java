@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.repository.UsuarioRepository;
+import com.example.demo.entity.Rol;
 import com.example.demo.entity.Usuario;
 import java.util.List;
 
@@ -24,9 +25,12 @@ public class CustomUserDetailsBusiness implements UserDetailsService{
         if (usuario == null) {
             throw new UsernameNotFoundException("El Usuario no se Encuentra Registrado");
         }
+        if (!usuario.getRol().equals(Rol.CONCURSANTE)) {
+            throw new UsernameNotFoundException("Acceso no autorizado para el rol del usuario");
+        }
         return User.withUsername(usuario.getMail())
                 .password(usuario.getPass())
-                .authorities(List.of(new SimpleGrantedAuthority(usuario.getRol().name())))
+                .authorities(List.of(new SimpleGrantedAuthority("ROLE_" + usuario.getRol().name())))
                 .build();
     } 
 }

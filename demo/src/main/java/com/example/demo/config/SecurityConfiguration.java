@@ -6,7 +6,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.SecurityFilterChain;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Configuration
@@ -26,7 +25,7 @@ public class SecurityConfiguration {
                 .formLogin(httpSecurityFormLoginConfigurer -> httpSecurityFormLoginConfigurer
                         .loginPage("/loginConcursante").permitAll()
                         .defaultSuccessUrl("/inicioConcursante")
-                );
+                );           
 
         return http.build();
     }
