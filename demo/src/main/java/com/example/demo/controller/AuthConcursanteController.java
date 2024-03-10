@@ -12,6 +12,12 @@ public class AuthConcursanteController {
     @Autowired
     private CustomUserDetailsBusiness customUserDetailsBusiness;
 
+    
+    @GetMapping("/")
+    public String principal(){
+        return "loginConcursante";
+    }
+    
     @GetMapping("/loginConcursante")
     public String loginConcursante(){
         return "loginConcursante";

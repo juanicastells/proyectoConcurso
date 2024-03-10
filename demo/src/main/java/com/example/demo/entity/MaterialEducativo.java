@@ -1,7 +1,5 @@
 package com.example.demo.entity;
 
-import org.springframework.web.multipart.MultipartFile;
-
 import jakarta.persistence.*;
 import java.io.File;
 

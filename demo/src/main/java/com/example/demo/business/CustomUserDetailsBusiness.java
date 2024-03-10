@@ -21,7 +21,6 @@ public class CustomUserDetailsBusiness implements UserDetailsService{
     @Override
     public UserDetails loadUserByUsername(String mail) throws UsernameNotFoundException {
         Usuario usuario = usuarioRepository.findBymail(mail);
-        
         if (usuario == null) {
             throw new UsernameNotFoundException("El Usuario no se Encuentra Registrado");
         }

@@ -4,11 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.MaterialEducativo;
-import com.example.demo.entity.Usuario;
 import com.example.demo.repository.MaterialEducativoRepository;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
 
 @Service
 public class MaterialEducativoBusiness {

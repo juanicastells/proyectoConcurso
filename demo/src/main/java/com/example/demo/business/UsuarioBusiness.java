@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Rol;
@@ -18,6 +21,7 @@ public class UsuarioBusiness{
     UsuarioRepository usuarioRepository;
 
     public Usuario insertUsuario(Usuario usuario) {
+        usuario.setPass(passwordEncoder().encode(usuario.getPass()));
         return usuarioRepository.save(usuario);
     }
 
@@ -74,13 +78,8 @@ public class UsuarioBusiness{
         return usuarioRepository.findAll();
     }
 
-    //CONCURSANTE
-    //subirMaterial
-    
-    //VISITANTE
-    //darLike
-    
-    //EVALUADOR
-    //completarRubrica
+    public PasswordEncoder passwordEncoder(){
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    }
        
 }
